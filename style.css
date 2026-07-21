@@ -334,9 +334,9 @@ body.light-mode .hero-name { background: linear-gradient(135deg, #1a1815 0%, #00
 .tl-left .tl-node { right: -21px; }
 .tl-right .tl-node { left: -21px; }
 
-.node-cyan { background: linear-gradient(135deg, var(--cyan), #0099b8); box-shadow: 0 0 0 2px var(--border), 0 0 15px var(--cyan-glow); }
+.node-cyan { background: linear-gradient(135deg, var(--cyan), #feffff); box-shadow: 0 0 0 2px var(--border), 0 0 15px var(--cyan-glow); }
 .node-magenta { background: linear-gradient(135deg, var(--magenta), #c01060); box-shadow: 0 0 0 2px var(--border), 0 0 15px var(--magenta-glow); }
-.node-amber { background: linear-gradient(135deg, var(--amber), #cc8a00); box-shadow: 0 0 0 2px var(--border), 0 0 15px var(--amber-glow); }
+.node-amber { background: linear-gradient(135deg, var(--amber), #040901); box-shadow: 0 0 0 2px var(--border), 0 0 15px var(--amber-glow); }
 .node-teal { background: linear-gradient(135deg, var(--teal), #00b870); box-shadow: 0 0 0 2px var(--border), 0 0 15px var(--teal-glow); }
 
 .tl-card { padding: 22px; display: inline-block; width: 100%; text-align: left; }
