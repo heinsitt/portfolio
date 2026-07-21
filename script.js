@@ -489,8 +489,14 @@ setTimeout(() => {
                 secObs.unobserve(e.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
     sections.forEach(s => secObs.observe(s));
     // Fallback: show all after 3s in case observer doesn't fire
+    // Immediate fallback for mobile
+if (window.innerWidth <= 900) {
+    sections.forEach(s => s.classList.add('in-view'));
+} else {
     setTimeout(() => sections.forEach(s => s.classList.add('in-view')), 3000);
+}
+
 })();
