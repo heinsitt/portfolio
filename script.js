@@ -26,7 +26,8 @@ if (themeBtn && themeIco) {
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
     if (header) header.classList.toggle('scrolled', window.scrollY > 50);
-});
+}, { passive: true });
+
 
 /* === MOBILE MENU === */
 const burger = document.getElementById('hamburger');
@@ -53,7 +54,7 @@ function updateActive() {
         }
     });
 }
-window.addEventListener('scroll', updateActive);
+window.addEventListener('scroll', updateActive, { passive: true });
 
 /* === REVEAL ON SCROLL === */
 const revealEls = document.querySelectorAll('.reveal');
@@ -218,9 +219,10 @@ function cycleLogos() {
 }
 setInterval(cycleLogos, 30000);
 
-/* === MATRIX RAIN — color cycling every 30 seconds === */
+/* === MATRIX RAIN — disabled on mobile for performance === */
 const canvas = document.getElementById('matrix-canvas');
-if (canvas) {
+const isMobile = window.innerWidth <= 900;
+if (canvas && !isMobile) {
     const ctx = canvas.getContext('2d');
 
     let W = canvas.width = window.innerWidth;
@@ -291,8 +293,18 @@ if (canvas) {
         }
     }
 
-    setInterval(drawMatrix, 42);
+        // Use rAF with throttle for smoother performance
+    let lastDraw = 0;
+    function rafMatrix(ts) {
+        if (ts - lastDraw > 50) { drawMatrix(); lastDraw = ts; }
+        requestAnimationFrame(rafMatrix);
+    }
+    requestAnimationFrame(rafMatrix);
 }
+
+// Mobile: hide canvas entirely
+if (canvas && isMobile) { canvas.style.display = 'none'; }
+
 
 /* === SKETCH DRAW-IN ANIMATIONS === */
 const sketchCircle = document.querySelector('.sketch-circle path');
@@ -323,15 +335,23 @@ sketchPaths.forEach((path, i) => {
     }, 2000 + i * 100);
 });
 
-/* === PARALLAX ON BLOBS === */
-const blobs = document.querySelectorAll('.blob');
-window.addEventListener('scroll', () => {
-    const sY = window.scrollY;
-    blobs.forEach((b, i) => {
-        const speed = (i + 1) * 0.3;
-        b.style.translate = `0 ${sY * speed * -0.05}px`;
-    });
-});
+/* === PARALLAX ON BLOBS — disabled on mobile === */
+if (!isMobile) {
+    const blobs = document.querySelectorAll('.blob');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const sY = window.scrollY;
+                blobs.forEach((b, i) => {
+                    b.style.translate = `0 ${sY * (i + 1) * 0.3 * -0.05}px`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
 
 /* === FOOTER LIVE GRAPH — upward trending neon line with arrow === */
 (function() {

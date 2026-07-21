@@ -645,3 +645,30 @@ body.light-mode .footer { background: rgba(250,248,244,0.9); }
     .about-cards { grid-template-columns: 1fr; gap: 16px; }
 }
 
+/* === MOBILE PERFORMANCE OPTIMIZATION === */
+@media (max-width: 900px) {
+    /* Kill matrix canvas */
+    #matrix-canvas { display: none !important; }
+    
+    /* Kill blob animations — too heavy for mobile GPU */
+    .blob-bg { display: none !important; }
+    
+    /* Kill grain overlay — forces repaint every frame */
+    .grain { display: none !important; }
+    
+    /* Kill non-essential infinite animations */
+    .organic-ring { animation: none !important; }
+    .profile-glow { animation: none !important; }
+    .float-tag { animation: none !important; display: none; }
+    .scroll-anim { animation: none !important; }
+    .cs-pulse { animation: none !important; }
+    
+    /* Reduce backdrop-filter usage */
+    .glass-card { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    header { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+    
+    /* Optimize touch scrolling */
+    body { -webkit-overflow-scrolling: touch; }
+    html { scroll-behavior: auto; }
+}
+
