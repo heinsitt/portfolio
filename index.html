@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hein Sitt | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Grain Texture Overlay -->
+    <div class="grain"></div>
+
+    <!-- Organic Blob Backgrounds -->
+    <div class="blob-bg">
+        <div class="blob blob-a"></div>
+        <div class="blob blob-b"></div>
+        <div class="blob blob-c"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="logo">
+            <span class="logo-name">Hein Sitt</span>
+            <span class="logo-cli" id="cli-anim">&gt;_</span>
+        </div>
+        <nav id="nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Work</a>
+            <a href="#education">Certs</a>
+            <a href="#contact">Contact</a>
+            <a href="resume.pdf" target="_blank" class="nav-cta"><i class="fas fa-file-pdf"></i> Resume</a>
+        </nav>
+        <div class="nav-right">
+            <button id="theme-toggle" class="icon-btn" aria-label="Theme"><i id="theme-icon" class="fas fa-sun"></i></button>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-close" id="mobile-close">&times;</button>
+        <nav class="mobile-nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Work</a>
+            <a href="#education">Certs</a>
+            <a href="#contact">Contact</a>
+            <a href="resume.pdf" target="_blank">Resume</a>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <svg class="sketch-underline hero-sketch" viewBox="0 0 300 20" preserveAspectRatio="none">
+            <path d="M5,10 C60,4 120,14 180,8 S260,12 295,6" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </svg>
+
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-greeting fade-up d1">
+                    <span class="status-dot"></span>
+                    <span class="handwritten">Hello, I'm</span>
+                </div>
+                <h1 class="hero-name fade-up d2">
+                    Hein Sitt
+                    <svg class="name-underline" viewBox="0 0 280 16" preserveAspectRatio="none">
+                        <path d="M4,8 C70,3 140,12 210,6 S270,10 276,5" stroke="currentColor" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                    </svg>
+                </h1>
+                <div class="hero-role fade-up d3">
+                    <span id="typed"></span><span class="cursor">_</span>
+                </div>
+                <p class="hero-desc fade-up d4">
+                    NOC &amp; Systems Engineer blending infrastructure reliability with automation artistry. Building systems that never sleep — monitored, secured, and beautifully engineered.
+                </p>
+                <div class="hero-actions fade-up d5">
+                    <a href="#projects" class="btn-fusion btn-primary"><i class="fas fa-code-branch"></i> View Work</a>
+                    <a href="#contact" class="btn-fusion btn-ghost"><i class="fas fa-paper-plane"></i> Contact</a>
+                </div>
+                <div class="hero-socials fade-up d6">
+                    <a href="https://github.com/heinsitt" target="_blank" class="social-orb"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/heinsitttun/" target="_blank" class="social-orb"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:heinsitttun2002@gmail.com" class="social-orb"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-right fade-up d4">
+                <div class="profile-organic">
+                    <div class="organic-ring organic-ring-1"></div>
+                    <div class="organic-ring organic-ring-2"></div>
+                    <div class="profile-glow"></div>
+                    <img src="profile.jpg" alt="Hein Sitt Tun" class="profile-img">
+                    <svg class="sketch-circle" viewBox="0 0 200 200">
+                        <path d="M100,10 C150,12 185,45 188,100 C190,155 145,188 95,190 C40,192 8,150 12,95 C15,42 55,12 100,10" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="4,3"/>
+                    </svg>
+                </div>
+                <!-- Floating tech tags — Set A (AWS, Linux, Docker, K8s) -->
+                <div class="float-tag ft-1 float-set-a"><i class="fab fa-aws"></i> AWS</div>
+                <div class="float-tag ft-2 float-set-a"><i class="fab fa-docker"></i> Docker</div>
+                <div class="float-tag ft-3 float-set-a"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="14" height="14" alt=""> K8s</div>
+                <div class="float-tag ft-4 float-set-a"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="14" height="14" alt=""> Linux</div>
+                <!-- Floating tech tags — Set B (Git, Terraform, GitHub) -->
+                <div class="float-tag ft-1 float-set-b"><i class="fab fa-github"></i> GitHub</div>
+                <div class="float-tag ft-2 float-set-b"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" width="14" height="14" alt=""> Terraform</div>
+                <div class="float-tag ft-3 float-set-b"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="14" height="14" alt=""> Git</div>
+                <div class="float-tag ft-4 float-set-b"><i class="fab fa-github"></i> GitOps</div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span class="handwritten">scroll</span>
+            <div class="scroll-anim"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">// 01</span>
+                <h2 class="section-title">About <span class="handwritten-accent">Me</span></h2>
+                <svg class="title-underline" viewBox="0 0 200 12" preserveAspectRatio="none">
+                    <path d="M3,6 C50,2 100,10 150,4 S190,8 197,4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="about-layout">
+                <div class="about-intro reveal">
+                    <p class="about-lead">
+                        I'm a <span class="hl-cyan">NOC &amp; Systems Engineer</span> with a passion for infrastructure reliability, automation, and cloud technologies. My mission: ensure 24/7 uptime through proactive monitoring, incident management, and rapid troubleshooting.
+                    </p>
+                </div>
+                <div class="about-cards">
+                    <div class="glass-card about-card reveal" style="--d:0.1s">
+                        <div class="about-icon cyan"><i class="fas fa-briefcase"></i></div>
+                        <h3>Experience</h3>
+                        <p class="card-sub">Contract NOC Engineer — BIM Group</p>
+                        <ul class="about-list">
+                            <li>Monitoring with DataDog, Zabbix, AWS CloudWatch</li>
+                            <li>Oracle Database query analysis for logs</li>
+                            <li>Incident reporting for internal &amp; external teams</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card about-card reveal" style="--d:0.2s">
+                        <div class="about-icon magenta"><i class="fas fa-bullseye"></i></div>
+                        <h3>Career Target</h3>
+                        <p class="card-sub">DevOps / Cloud Engineer</p>
+                        <p class="card-text">Expanding in Linux, AWS, Docker, Kubernetes, Jenkins CI/CD, and Git workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">// 02</span>
+                <h2 class="section-title">Tech <span class="handwritten-accent">Stack</span></h2>
+                <svg class="title-underline" viewBox="0 0 200 12" preserveAspectRatio="none">
+                    <path d="M3,6 C50,2 100,10 150,4 S190,8 197,4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <p class="tech-subtitle reveal">Sharpening my edge — the tools I work with daily and the stack I'm mastering.</p>
+            <div class="tech-grid">
+                <div class="tech-tile reveal" style="--d:0.03s"><div class="tech-ic"><i class="fa-brands fa-aws"></i></div><span>AWS</span></div>
+                <div class="tech-tile reveal" style="--d:0.06s"><div class="tech-ic"><img src="https://media.base44.com/images/public/6a53c75b028d953354cfc72a/894872866_Azure-Logo-PNG-Photo.png" width="38" height="38" alt="Azure" style="object-fit:contain;"></div><span>Azure</span><span class="lvl">Basic</span></div>
+                <div class="tech-tile reveal" style="--d:0.09s"><div class="tech-ic"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="32" height="32" alt="Linux"></div><span>Linux</span></div>
+                <div class="tech-tile reveal" style="--d:0.12s"><div class="tech-ic"><i class="fa-brands fa-docker"></i></div><span>Docker</span></div>
+                <div class="tech-tile reveal" style="--d:0.15s"><div class="tech-ic"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="32" height="32" alt="K8s"></div><span>Kubernetes</span><span class="lvl">Basic</span></div>
+                <div class="tech-tile reveal" style="--d:0.18s"><div class="tech-ic"><i class="fa-brands fa-jenkins"></i></div><span>Jenkins</span><span class="lvl">Basic</span></div>
+                <div class="tech-tile reveal" style="--d:0.21s"><div class="tech-ic"><img src="https://media.base44.com/images/public/6a53c75b028d953354cfc72a/6a3b0ab03_zabbix-logo.png" width="38" height="38" alt="Zabbix" style="object-fit:contain;"></div><span>Zabbix</span></div>
+                <div class="tech-tile reveal" style="--d:0.24s"><div class="tech-ic"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" width="32" height="32" alt="Grafana"></div><span>Grafana</span></div>
+                <div class="tech-tile reveal" style="--d:0.255s"><div class="tech-ic"><img src="https://imgix.datadoghq.com/img/dd_logo_n_70x75.png" width="30" height="30" alt="DataDog" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=dd-icon>DD</span>'"></div><span>DataDog</span></div>
+                <div class="tech-tile reveal" style="--d:0.27s"><div class="tech-ic"><i class="fa-brands fa-github"></i></div><span>GitHub</span></div>
+                <div class="tech-tile reveal" style="--d:0.30s"><div class="tech-ic"><img src="https://media.base44.com/images/public/6a53c75b028d953354cfc72a/713ee2378_base44logo.png" width="38" height="38" alt="Base44" style="object-fit:contain;border-radius:8px;"></div><span>Base44</span></div>
+                <div class="tech-tile reveal" style="--d:0.33s"><div class="tech-ic"><i class="fa-brands fa-html5"></i></div><span>HTML5</span></div>
+                <div class="tech-tile reveal" style="--d:0.36s"><div class="tech-ic"><i class="fa-brands fa-css3-alt"></i></div><span>CSS3</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS / MINI LABS -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">// 03</span>
+                <h2 class="section-title">Projects <span class="handwritten-accent">/</span> Mini Labs</h2>
+                <svg class="title-underline" viewBox="0 0 200 12" preserveAspectRatio="none">
+                    <path d="M3,6 C50,2 100,10 150,4 S190,8 197,4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="coming-soon-wrap reveal">
+                <div class="glass-card coming-soon-card">
+                    <div class="cs-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>Loading Projects<span class="cs-dots"><span>.</span><span>.</span><span>.</span></span></h3>
+                    <p class="cs-desc">Projects and mini labs are being compiled. Upload coming soon — stay tuned.</p>
+                    <div class="cs-terminal">
+                        <span class="cs-prompt">$&gt;</span>
+                        <span class="cs-cmd" id="cs-cmd"></span><span class="cs-cursor">_</span>
+                    </div>
+                    <div class="cs-tags">
+                        <span class="tag">AWS Labs</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">Zabbix Automation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTS — VERTICAL ZIG-ZAG TIMELINE -->
+    <section id="education" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">// 04</span>
+                <h2 class="section-title">Education &amp; <span class="handwritten-accent">Certs</span></h2>
+                <svg class="title-underline" viewBox="0 0 200 12" preserveAspectRatio="none">
+                    <path d="M3,6 C50,2 100,10 150,4 S190,8 197,4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-spine"></div>
+
+                <!-- 1: Diploma — Education -->
+                <div class="tl-item tl-left" style="--d:0.05s">
+                    <div class="tl-node node-cyan"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="glass-card tl-card tl-reveal-left">
+                        <span class="tl-type-badge edu-badge"><i class="fas fa-university"></i> Education</span>
+                        <h4>Diploma in Information Technology</h4>
+                        <p class="tl-issuer"><i class="fas fa-building"></i> A.G.T.I — Insein</p>
+                        <p class="tl-desc">Subjects: C++ &amp; C#, Web Design, Network Essentials, Data Communication.</p>
+                    </div>
+                </div>
+
+                <!-- 1b: B.Sc (Maths) — Education -->
+                <div class="tl-item tl-right" style="--d:0.08s">
+                    <div class="tl-node node-amber"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="glass-card tl-card tl-reveal-right">
+                        <span class="tl-type-badge edu-badge"><i class="fas fa-university"></i> Education</span>
+                        <h4>B.Sc (Maths) — 3rd Year</h4>
+                        <p class="tl-issuer"><i class="fas fa-building"></i> Dagon University</p>
+                        <p class="tl-desc">Bachelor of Science in Mathematics, currently in 3rd year.</p>
+                    </div>
+                </div>
+
+                <!-- 2: 100 Days of DevOps -->
+                <div class="tl-item tl-left" style="--d:0.1s">
+                    <div class="tl-node node-magenta"><i class="fas fa-infinity"></i></div>
+                    <div class="glass-card tl-card tl-reveal-right cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>100 Days of DevOps</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> June 17, 2026</p>
+                        <p class="tl-issuer"><i class="fas fa-user-tie"></i> Mumshad Mannambeth</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-100days-devops.jpg')">
+                        <img src="assets/cert-100days-devops.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 3: 100 Days of Cloud (AWS) -->
+                <div class="tl-item tl-right" style="--d:0.15s">
+                    <div class="tl-node node-amber"><i class="fab fa-aws"></i></div>
+                    <div class="glass-card tl-card tl-reveal-left cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>100 Days of Cloud (AWS)</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> January 17, 2026</p>
+                        <p class="tl-issuer"><i class="fas fa-user-tie"></i> Mumshad Mannambeth</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-100days-cloud-aws.jpg')">
+                        <img src="assets/cert-100days-cloud-aws.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 4: 100 Days of Cloud (Azure) -->
+                <div class="tl-item tl-right" style="--d:0.2s">
+                    <div class="tl-node node-teal"><i class="fab fa-microsoft"></i></div>
+                    <div class="glass-card tl-card tl-reveal-right cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>100 Days of Cloud (Azure)</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> January 30, 2026</p>
+                        <p class="tl-issuer"><i class="fas fa-user-tie"></i> Mumshad Mannambeth</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-100days-cloud-azure.jpg')">
+                        <img src="assets/cert-100days-cloud-azure.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 5: Cloud Tech Fundamental -->
+                <div class="tl-item tl-left" style="--d:0.25s">
+                    <div class="tl-node node-magenta"><i class="fas fa-cloud"></i></div>
+                    <div class="glass-card tl-card tl-reveal-left cert-placeholder">
+                        <h4>Cloud Tech Fundamental</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> October 2025</p>
+                        <p class="tl-issuer"><i class="fas fa-building"></i> CCNA VCE TRAINING — Sir Kaung</p>
+                        <p class="tl-desc">Student ID: VCE010048</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-cloud-tech-fundamental.jpg')">
+                        <img src="assets/cert-cloud-tech-fundamental.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 6: Linux Special Class -->
+                <div class="tl-item tl-right" style="--d:0.3s">
+                    <div class="tl-node node-amber"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="16" height="16" alt="Linux"></div>
+                    <div class="glass-card tl-card tl-reveal-right cert-placeholder">
+                        <h4>Linux Special Class</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> February 1, 2026</p>
+                        <p class="tl-issuer"><i class="fas fa-building"></i> BNN TECH — Bo Zin Myo</p>
+                        <p class="tl-desc">Debian, Ubuntu, RHEL 9, CentOS 9, RockyLinux 9.</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-linux-special-class.jpg')">
+                        <img src="assets/cert-linux-special-class.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 7: Linux Level 1 -->
+                <div class="tl-item tl-left" style="--d:0.35s">
+                    <div class="tl-node node-teal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="16" height="16" alt="Linux"></div>
+                    <div class="glass-card tl-card tl-reveal-left cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>Linux — Level 1</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> April 4 – 28, 2026</p>
+                        <p class="tl-cert-id">ID: Ae03e3d0-C92f-4f92-898e-9f681eda9c0c</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-linux-level1.jpg')">
+                        <img src="assets/cert-linux-level1.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 8: Docker Level 1 -->
+                <div class="tl-item tl-right" style="--d:0.4s">
+                    <div class="tl-node node-cyan"><i class="fab fa-docker"></i></div>
+                    <div class="glass-card tl-card tl-reveal-right cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>Docker — Level 1</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> March 19 – April 20, 2026</p>
+                        <p class="tl-cert-id">ID: 5af66258-E3c6-4b83-9024-F0d0282f0e8d</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-docker-level1.jpg')">
+                        <img src="assets/cert-docker-level1.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 9: Git Level 1 -->
+                <div class="tl-item tl-left" style="--d:0.45s">
+                    <div class="tl-node node-amber"><i class="fab fa-github"></i></div>
+                    <div class="glass-card tl-card tl-reveal-left cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>Git — Level 1</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> Feb 3 – April 20, 2026</p>
+                        <p class="tl-cert-id">ID: 262c61d7-Ecd0-4ba9-96fe-Cb407a4436cc</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-git-level1.jpg')">
+                        <img src="assets/cert-git-level1.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 10: Jenkins Level 1 -->
+                <div class="tl-item tl-right" style="--d:0.5s">
+                    <div class="tl-node node-magenta"><i class="fab fa-jenkins"></i></div>
+                    <div class="glass-card tl-card tl-reveal-right cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>Jenkins — Level 1</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> May 21 – 22, 2026</p>
+                        <p class="tl-cert-id">ID: 705d464c-8c9f-4e9b-Bb5e-D26b07ef2e26</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-jenkins-level1.jpg')">
+                        <img src="assets/cert-jenkins-level1.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- 11: Kubernetes Level 1 -->
+                <div class="tl-item tl-left" style="--d:0.55s">
+                    <div class="tl-node node-teal"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="18" height="18" alt="K8s"></div>
+                    <div class="glass-card tl-card tl-reveal-left cert-placeholder">
+                        <span class="tl-badge">KodeKloud</span>
+                        <h4>Kubernetes — Level 1</h4>
+                        <p class="tl-date"><i class="fas fa-calendar"></i> April 29 – May 13, 2026</p>
+                        <p class="tl-cert-id">ID: Eb60f3c2-Fddd-46eb-8235-Db4c9137f1e0</p>
+                        <div class="cert-image-link" onclick="openLightbox('assets/cert-kubernetes-level1.jpg')">
+                        <img src="assets/cert-kubernetes-level1.jpg" alt="Certificate" class="cert-thumb-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="cert-ph-thumb" style="display:none;"><i class="fas fa-image"></i><span>Certificate image coming soon</span></div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="tl-end">
+                    <div class="tl-end-dot"></div>
+                    <span class="handwritten">still learning...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">// 05</span>
+                <h2 class="section-title">Get In <span class="handwritten-accent">Touch</span></h2>
+                <svg class="title-underline" viewBox="0 0 200 12" preserveAspectRatio="none">
+                    <path d="M3,6 C50,2 100,10 150,4 S190,8 197,4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info reveal" style="--d:0.1s">
+                    <h3>Let's talk infrastructure.</h3>
+                    <p>Open to DevOps/Cloud roles, collaborations, or just a tech chat.</p>
+                    <div class="contact-links">
+                        <a href="mailto:heinsitttun2002@gmail.com" class="contact-row">
+                            <div class="contact-ic"><i class="fas fa-envelope"></i></div>
+                            <span>heinsitttun2002@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/heinsitttun/" target="_blank" class="contact-row">
+                            <div class="contact-ic"><i class="fab fa-linkedin"></i></div>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/heinsitt" target="_blank" class="contact-row">
+                            <div class="contact-ic"><i class="fab fa-github"></i></div>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="glass-card contact-form-wrap reveal" style="--d:0.2s">
+                    <form id="contact-form" action="https://formsubmit.co/heinsitttun2002@gmail.com" method="POST">
+                        <!-- FormSubmit anti-spam -->
+                        <input type="hidden" name="_subject" value="New message from your Portfolio website!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_honey" style="display:none;">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="#contact">
+                        <div class="form-row">
+                            <label>NAME</label>
+                            <input type="text" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-row">
+                            <label>EMAIL</label>
+                            <input type="email" name="email" placeholder="Your email" required>
+                        </div>
+                        <div class="form-row">
+                            <label>MESSAGE</label>
+                            <textarea name="message" rows="4" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-fusion btn-primary btn-block"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-three">
+            <div class="footer-left">
+                <canvas id="footer-graph" width="120" height="32"></canvas>
+                <span class="footer-online"><span class="footer-dot"></span> System Online</span>
+            </div>
+            <div class="footer-center">
+                <span class="footer-name">Hein Sitt Tun</span>
+                <span class="footer-tagline handwritten">art meets tech</span>
+            </div>
+            <div class="footer-right">
+                <span class="footer-copy">&copy; 2026 All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lb-close">&times;</span>
+        <img id="lb-img" class="lb-img" alt="Certificate">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
