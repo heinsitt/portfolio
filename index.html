@@ -198,27 +198,111 @@
                     <path d="M3,6 C50,2 100,10 150,4 S190,8 197,4" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
                 </svg>
             </div>
-            <div class="coming-soon-wrap reveal">
-                <div class="glass-card coming-soon-card">
-                    <div class="cs-icon">
-                        <i class="fas fa-terminal"></i>
+            <!-- ===== PROJECT 01: WordPress Monitoring Lab ===== -->
+<div class="proj-grid reveal">
+    <div class="glass-card proj-card">
+        <!-- Project Header -->
+        <div class="proj-head">
+            <div class="proj-icon"><i class="fab fa-wordpress"></i></div>
+            <div>
+                <span class="proj-badge">Lab 01</span>
+                <h3 class="proj-title">WordPress + Zabbix/Grafana Monitoring Stack</h3>
+                <p class="proj-subtitle">Docker-based infrastructure monitoring with Grafana visualization</p>
+            </div>
+        </div>
+
+        <!-- Tech Tags -->
+        <div class="proj-tags">
+            <span class="tag">WordPress</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Zabbix</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Apache</span>
+            <span class="tag">Linux</span>
+        </div>
+
+        <!-- Architecture Diagram (CSS) -->
+        <div class="arch-diagram">
+            <div class="arch-layer">
+                <span class="arch-label">VM: 10.204.22.99 — Rocky Linux 9</span>
+                <div class="arch-boxes">
+                    <div class="arch-box arch-wp">
+                        <i class="fab fa-wordpress"></i>
+                        <span>WordPress<br><small>:8080</small></span>
                     </div>
-                    <h3>Loading Projects<span class="cs-dots"><span>.</span><span>.</span><span>.</span></span></h3>
-                    <p class="cs-desc">Projects and mini labs are being compiled. Upload coming soon — stay tuned.</p>
-                    <div class="cs-terminal">
-                        <span class="cs-prompt">$&gt;</span>
-                        <span class="cs-cmd" id="cs-cmd"></span><span class="cs-cursor">_</span>
+                    <div class="arch-box arch-db">
+                        <i class="fas fa-database"></i>
+                        <span>MySQL<br><small></small></span>
                     </div>
-                    <div class="cs-tags">
-                        <span class="tag">AWS Labs</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Kubernetes</span>
-                        <span class="tag">CI/CD</span>
-                        <span class="tag">Zabbix Automation</span>
+                </div>
+            </div>
+            <div class="arch-arrow"><i class="fas fa-arrow-down"></i> Agent collects metrics</div>
+            <div class="arch-layer">
+                <div class="arch-boxes">
+                    <div class="arch-box arch-zabbix">
+                        <i class="fas fa-server"></i>
+                        <span>Zabbix Server<br><small>:10050</small></span>
+                    </div>
+                    <div class="arch-box arch-zdb">
+                        <i class="fas fa-database"></i>
+                        <span>Zabbix DB<br><small>:3306</small></span>
+                    </div>
+                    <div class="arch-box arch-zweb">
+                        <i class="fas fa-globe"></i>
+                        <span>Zabbix Web<br><small>:8082</small></span>
+                    </div>
+                </div>
+            </div>
+            <div class="arch-arrow"><i class="fas fa-arrow-down"></i> Data source</div>
+            <div class="arch-layer">
+                <div class="arch-boxes">
+                    <div class="arch-box arch-grafana">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Grafana Dashboard<br><small>:3000</small></span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Description -->
+        <div class="proj-desc">
+            <p><strong>What it does:</strong> On Rocky Linux 9, monitors WordPress (Apache) container health — CPU, memory, disk, network, and Apache response metrics — via Zabbix Agent, visualized in real-time on a Grafana NOC dashboard.</p>
+<p><strong>What I learned:</strong> Rocky Linux server setup, Docker container orchestration, Zabbix agent/server configuration, Grafana data source integration, and NOC-style alerting workflows.</p>
+
+        </div>
+
+        <!-- Screenshot Gallery -->
+        <div class="proj-gallery-head"><i class="fas fa-images"></i> Screenshots</div>
+        <div class="proj-gallery">
+            <div class="proj-screenshot" onclick="openLightbox('assets/lab01-arch.jpg')">
+                <img src="assets/lab01-arch.jpg" alt="Architecture" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="proj-shot-ph" style="display:none;"><i class="fas fa-image"></i><span>lab01-arch.jpg</span></div>
+            </div>
+            <div class="proj-screenshot" onclick="openLightbox('assets/lab01-grafana.jpg')">
+                <img src="assets/lab01-grafana.jpg" alt="Grafana Dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="proj-shot-ph" style="display:none;"><i class="fas fa-image"></i><span>lab01-grafana.jpg</span></div>
+            </div>
+            <div class="proj-screenshot" onclick="openLightbox('assets/lab01-zabbix.jpg')">
+                <img src="assets/lab01-zabbix.jpg" alt="Zabbix Dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="proj-shot-ph" style="display:none;"><i class="fas fa-image"></i><span>lab01-zabbix.jpg</span></div>
+            </div>
+            <div class="proj-screenshot" onclick="openLightbox('assets/lab01-containers.jpg')">
+                <img src="assets/lab01-containers.jpg" alt="Docker Containers" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="proj-shot-ph" style="display:none;"><i class="fas fa-image"></i><span>lab01-containers.jpg</span></div>
+            </div>
+            <div class="proj-screenshot" onclick="openLightbox('assets/lab01-wpweb0.jpg')">
+                <img src="assets/lab01-wpweb0.jpg" alt="Rocky Linux Terminal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="proj-shot-ph" style="display:none;"><i class="fas fa-image"></i><span>lab01-wpweb0.jpg</span></div>
+            </div>
+            <div class="proj-screenshot" onclick="openLightbox('assets/lab01-wpweb1.jpg')">
+                <img src="assets/lab01-wpweb1.jpg" alt="Rocky Linux Terminal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="proj-shot-ph" style="display:none;"><i class="fas fa-image"></i><span>lab01-wpweb1.jpg</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
     </section>
 
     <!-- EDUCATION & CERTS — VERTICAL ZIG-ZAG TIMELINE -->
