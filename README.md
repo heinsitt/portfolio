@@ -2,6 +2,10 @@
 
 This portfolio is containerized with Docker and auto-deployed via GitHub Actions.
 
+## 🏗️ Architecture Overview
+
+![Docker + CI/CD Mindmap](images/docker-cicd-mindmap.jpg)
+
 ### Tech Stack
 - **Docker** — Containerization
 - **Nginx** — Web server
